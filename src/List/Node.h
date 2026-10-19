@@ -9,7 +9,7 @@ public:
 
     Node* next; // Wskaźnik na następny węzeł
 
-    Node(int value); // Konstruktor przyjmujący wartość
+    Node(int val) : data(val), prev(nullptr), next(nullptr) {}
 };
 
 #endif

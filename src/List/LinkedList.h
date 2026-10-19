@@ -1,43 +1,27 @@
 #ifndef LINKED_LIST_H
 #define LINKED_LIST_H
 
-#include "Node.h" // Dodanie pliku nag³ówkowego Node.h
+#include "Node.h" //
 
-class LinkedList() {
+class LinkedList {
 private:
-	Node* prev;
-	Node* next;
-	int data;
+    Node* head; // 
+    Node* tail; //
+    int size;
+
 public:
-	LinkedList(); // konstruktor tworz¹cy pust¹ listê
-	~LinkedList(); // destruktor usuwa listê
+    LinkedList();
+    ~LinkedList();
 
-	// dodaje pierwszy element
-	void addFront(int value);
-
-	// dodaje ostatni element
-	void addLast(int value);
-
-	// dodaje element na danym indeksie
-	void addIndex(int index, int value);
-
-	// usuwa pierwszy element
-	void removeFront();
-
-	// usuwa ostatni element
-	void removeLast();
-
-	// usuwa okreœlony element
-	void removeIndex(int index);
-
-	// wyœwietla listê (od pocz¹tku)
-	void displayForward();
-
-	// wyœwietla listê (od koñca)
-	void displayBackward();
-
-	// usuwa zawartoœæ listy
-	void clear();
+    void addFront(int value);
+    void addBack(int value);
+    void addAtIndex(int index, int value);
+    void removeFront();
+    void removeBack();
+    void removeAtIndex(int index);
+    void displayForward() const;
+    void displayBackward() const;
+    void clear();
 };
 
-#endif 
+#endif
