@@ -1,3 +1,2 @@
-Implementacja listy dwukierunkowej.
+Implementacja listy dwukierunkowej w C++
 
-Działanie można zobaczyć uruchamiając plik .exe
