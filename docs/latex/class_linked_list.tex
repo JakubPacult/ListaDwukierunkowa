@@ -1,0 +1,119 @@
+\doxysection{Linked\+List Class Reference}
+\hypertarget{class_linked_list}{}\label{class_linked_list}\index{LinkedList@{LinkedList}}
+
+
+Klasa implementująca dynamiczną listę dwukierunkową w języku C++.  
+
+
+
+
+{\ttfamily \+\#include $<$Linked\+List.\+h$>$}
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_linked_list_afe7f78983e173f8018927cf2ad11a5aa}\label{class_linked_list_afe7f78983e173f8018927cf2ad11a5aa} 
+{\bfseries Linked\+List} ()
+\begin{DoxyCompactList}\small\item\em Konstruktor domyślny. Tworzy pustą listę. \end{DoxyCompactList}\item 
+\Hypertarget{class_linked_list_a35811ed58ff0d8d9cc9b309b8d8f5111}\label{class_linked_list_a35811ed58ff0d8d9cc9b309b8d8f5111} 
+{\bfseries \texorpdfstring{$\sim$}{\string~}\+Linked\+List} ()
+\begin{DoxyCompactList}\small\item\em Destruktor. Zwalnia pamięć zajmowaną przez wszystkie węzły listy. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_linked_list_ae11f2a13c0b00795b5dfcb2aee6d3092}{add\+Front}} (int value)
+\begin{DoxyCompactList}\small\item\em Dodaje nowy element na początek listy. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_linked_list_ac7f903f2fe6ba64dd578510de14dd2e4}{add\+Back}} (int value)
+\begin{DoxyCompactList}\small\item\em Dodaje nowy element na koniec listy. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_linked_list_a08b6a280c092728422b156c543e6e5cb}{add\+At\+Index}} (int index, int value)
+\begin{DoxyCompactList}\small\item\em Wstawia nowy element pod wskazany indeks. @indeks Indeks, pod który chcemy wstawić element (liczony od 0). \end{DoxyCompactList}\item 
+\Hypertarget{class_linked_list_ad590b43354e9893d0e20ba72c7aa9c5d}\label{class_linked_list_ad590b43354e9893d0e20ba72c7aa9c5d} 
+void {\bfseries remove\+Front} ()
+\begin{DoxyCompactList}\small\item\em Usuwa pierwszy element z listy. \end{DoxyCompactList}\item 
+\Hypertarget{class_linked_list_ad0c1a146e60ee56088485ac837dcbe6c}\label{class_linked_list_ad0c1a146e60ee56088485ac837dcbe6c} 
+void {\bfseries remove\+Back} ()
+\begin{DoxyCompactList}\small\item\em Usuwa ostatni element z listy. \end{DoxyCompactList}\item 
+void \doxymbox{\hyperlink{class_linked_list_a49f7599552431e79443f8b0d5548e495}{remove\+At\+Index}} (int index)
+\begin{DoxyCompactList}\small\item\em Usuwa element znajdujący się pod wskazanym indeksem. \end{DoxyCompactList}\item 
+\Hypertarget{class_linked_list_a41d86c8263d245f1cdbbd9bead840544}\label{class_linked_list_a41d86c8263d245f1cdbbd9bead840544} 
+void {\bfseries display\+Forward} () const
+\begin{DoxyCompactList}\small\item\em Wyświetla zawartość listy od początku do końca (w przód). \end{DoxyCompactList}\item 
+\Hypertarget{class_linked_list_a6e3b8424054238e88d4d5eea099d07bd}\label{class_linked_list_a6e3b8424054238e88d4d5eea099d07bd} 
+void {\bfseries display\+Backward} () const
+\begin{DoxyCompactList}\small\item\em Wyświetla zawartość listy od końca do początku (w tył). \end{DoxyCompactList}\item 
+\Hypertarget{class_linked_list_a261977565e78dd74f288d47ba5865242}\label{class_linked_list_a261977565e78dd74f288d47ba5865242} 
+void {\bfseries clear} ()
+\begin{DoxyCompactList}\small\item\em Usuwa wszystkie elementy z listy i resetuje jej stan. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Klasa implementująca dynamiczną listę dwukierunkową w języku C++. 
+
+Klasa zarządza węzłami typu \doxylink{class_node}{Node}, umożliwiając efektywne operacje dodawania, usuwania oraz przeglądania elementów zarówno w przód, jak i w tył. 
+
+\label{class_linked_list_doc-func-members}
+\Hypertarget{class_linked_list_doc-func-members}
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_linked_list_a08b6a280c092728422b156c543e6e5cb}\index{LinkedList@{LinkedList}!addAtIndex@{addAtIndex}}
+\index{addAtIndex@{addAtIndex}!LinkedList@{LinkedList}}
+\doxysubsubsection{\texorpdfstring{addAtIndex()}{addAtIndex()}}
+{\footnotesize\ttfamily \label{class_linked_list_a08b6a280c092728422b156c543e6e5cb} 
+void Linked\+List::\+add\+At\+Index (\begin{DoxyParamCaption}\item[{int}]{index}{, }\item[{int}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Wstawia nowy element pod wskazany indeks. @indeks Indeks, pod który chcemy wstawić element (liczony od 0). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Wartość typu całkowitego do wstawienia. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_linked_list_ac7f903f2fe6ba64dd578510de14dd2e4}\index{LinkedList@{LinkedList}!addBack@{addBack}}
+\index{addBack@{addBack}!LinkedList@{LinkedList}}
+\doxysubsubsection{\texorpdfstring{addBack()}{addBack()}}
+{\footnotesize\ttfamily \label{class_linked_list_ac7f903f2fe6ba64dd578510de14dd2e4} 
+void Linked\+List::\+add\+Back (\begin{DoxyParamCaption}\item[{int}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Dodaje nowy element na koniec listy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Wartość typu całkowitego do dodania. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_linked_list_ae11f2a13c0b00795b5dfcb2aee6d3092}\index{LinkedList@{LinkedList}!addFront@{addFront}}
+\index{addFront@{addFront}!LinkedList@{LinkedList}}
+\doxysubsubsection{\texorpdfstring{addFront()}{addFront()}}
+{\footnotesize\ttfamily \label{class_linked_list_ae11f2a13c0b00795b5dfcb2aee6d3092} 
+void Linked\+List::\+add\+Front (\begin{DoxyParamCaption}\item[{int}]{value}{}\end{DoxyParamCaption})}
+
+
+
+Dodaje nowy element na początek listy. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Wartość typu całkowitego do dodania. \\
+\hline
+\end{DoxyParams}
+\Hypertarget{class_linked_list_a49f7599552431e79443f8b0d5548e495}\index{LinkedList@{LinkedList}!removeAtIndex@{removeAtIndex}}
+\index{removeAtIndex@{removeAtIndex}!LinkedList@{LinkedList}}
+\doxysubsubsection{\texorpdfstring{removeAtIndex()}{removeAtIndex()}}
+{\footnotesize\ttfamily \label{class_linked_list_a49f7599552431e79443f8b0d5548e495} 
+void Linked\+List::\+remove\+At\+Index (\begin{DoxyParamCaption}\item[{int}]{index}{}\end{DoxyParamCaption})}
+
+
+
+Usuwa element znajdujący się pod wskazanym indeksem. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em index} & Indeks usuwanego elementu (liczony od 0). \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+src/\+\+List/\doxymbox{\hyperlink{_linked_list_8h}{Linked\+List.\+h}}\item 
+src/\+\+List/Linked\+List.\+cpp\end{DoxyCompactItemize}
