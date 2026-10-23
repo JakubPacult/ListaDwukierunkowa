@@ -1,6 +1,70 @@
-	\newpage
+\newpage
 \section{Implementacja}		%4
-%Opisać implementacje algorytmu/programu. Pokazać ciekawe fragmenty kodu
-%Opisać powstałe wyniki (algorytmu/nrzędzia)
 
+\subsection{Omówienie wybranych fragmentów kodu źródłowego}
+Implementacja projektu została podzielona na modularne pliki nagłówkowe oraz pliki źródłowe, co zwiększa czytelność kodu oraz ułatwia jego konserwację. Poniżej przedstawiono kluczowe fragmenty oprogramowania realizujące najważniejsze założenia algorytmiczne i architektoniczne.
 
+\subsubsection{Bezpieczne wstawianie elementu pod wskazany indeks}
+Jedną z bardziej złożonych operacji w liście dwukierunkowej jest wstawienie elementu w środek struktury. Wymaga to precyzyjnego przepięcia wskaźników zarówno dla nowego węzła, jak i jego bezpośrednich sąsiadów:
+
+\begin{lstlisting}[caption=Metoda addAtIndex, label={lst:listing-cpp}, language=C++]
+void LinkedList::addAtIndex(int index, int value) {
+    if (index < 0 || index > size) {
+        std::cout << "Nieprawidlowy indeks!\n";
+        return;
+    }
+    if (index == 0) { addFront(value); return; }
+    if (index == size) { addBack(value); return; }
+
+    Node* current = head;
+    for (int i = 0; i < index; i++) {
+        current = current->next;
+    }
+
+    Node* newNode = NodeFactory::createNode(value); // Użycie wzorca Fabryki
+    Node* prevNode = current->prev;
+
+    prevNode->next = newNode;
+    newNode->prev = prevNode;
+    newNode->next = current;
+    current->prev = newNode;
+
+    size++;
+}
+\end{lstlisting}
+
+\subsubsection{Implementacja Wzorca Iteratora}
+Wzorzec Iteratora\cite{gamma_design_patterns} pozwala na sekwencyjny dostęp do elementów kolekcji bez ujawniania jej wewnętrznej budowy. Poniższy fragment prezentuje przeciążenie operatorów inkrementacji oraz wyłuskania:
+
+\begin{lstlisting}[caption=Wzorzec projektowy - iterator, label={lst:listing-cpp}, language=C++]
+class ListIterator {
+private:
+    Node* current;
+public:
+    explicit ListIterator(Node* ptr) : current(ptr) {}
+
+    int& operator*() const {
+        return current->data;
+    }
+
+    ListIterator& operator++() {
+        if (current != nullptr) {
+            current = current->next;
+        }
+        return *this;
+    }
+
+    bool operator!=(const ListIterator& other) const {
+        return current != other.current;
+    }
+};
+\end{lstlisting}
+
+\subsection{Opis uzyskanych wyników i działania programu}
+W wyniku poprawnej kompilacji i uruchomienia programu (zarówno za pomocą skryptu konsolowego MSVC \texttt{cl.exe}, jak i przez środowisko Visual Studio) otrzymano w pełni stabilną aplikację konsolową. Uzyskane rezultaty obejmują:
+\begin{enumerate}
+    \item \textbf{Dynamiczne zarządzanie pamięcią:} Program poprawnie alokuje pamięć dla nowych węzłów w stercie oraz – dzięki zaimplementowanemu destruktorowi i metodzie \texttt{clear()} – zwalnia ją całkowicie w momencie zamknięcia, nie powodując wycieków pamięci (\textit{memory leaks}).
+    \item \textbf{Poprawność strukturalna:} Operacje wstawiania oraz usuwania elementów na początku, końcu oraz pod wskazanym indeksem zachowują spójność wskaźników \texttt{next} oraz \texttt{prev}.
+    \item \textbf{Efektywność iteracji:} Zastosowanie dedykowanego iteratora umożliwiło czytelne i bezpieczne przeglądanie zawartości struktury danych, co zbliża implementację do standardów biblioteki STL języka C++.
+    \item \textbf{Generowanie dokumentacji:} Użycie komentarzy zgodnych ze standardem Doxygen pozwoliło na automatyczne wyczyszczenie struktury kodu i przygotowanie kompletnego raportu API projektu.
+\end{enumerate}

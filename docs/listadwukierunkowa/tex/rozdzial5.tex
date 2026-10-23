@@ -1,5 +1,13 @@
-	\newpage
-\section{Wnioski}	%5
-%Npisać wnioski końcowe z przeprowadzonego projektu, 
+\newpage
+\section{Wnioski}		%5
 
+Przeprowadzony projekt pozwolił na praktyczne zastosowanie zaawansowanych koncepcji programowania obiektowego oraz struktur danych w języku C++. Realizacja zadania dostarczyła kilku istotnych wniosków o charakterze technicznym i merytorycznym:
 
+\begin{enumerate}
+    \item \textbf{Elastyczność i wydajność struktur dynamicznych:} Dwukierunkowa lista wiązana udowodniła swoją przydatność w scenariuszach wymagających częstych operacji modyfikacji zbioru danych (wstawiania i usuwania) w czasie stałym $O(1)$ po uzyskaniu dostępu do węzła, eliminując narzut związany z realokacją tablic dynamicznych.
+    \item \textbf{Zalety wzorców projektowych:} Wdrożenie wzorca \textit{Iterator} oraz \textit{Fabryka} znacząco podniosło czytelność kodu oraz jego modularność. Wzorzec fabryki pozwolił na scentralizowanie procesu tworzenia obiektów, natomiast iterator uniezależnił logikę przeglądania elementów od wewnętrznej reprezentacji wskaźników listy, co stanowi dobrą praktykę inżynieryjną zgodną ze standardami biblioteki STL.
+    \item \textbf{Rola narzędzi wspierających:} Wykorzystanie nowoczesnego środowiska programistycznego (Visual Studio z kompilatorem MSVC), systemu kontroli wersji Git oraz generatora Doxygen pozwoliło na sprawne zarządzanie kodem, bezpieczne testowanie eksperymentalnych rozwiązań na oddzielnych gałęziach oraz automatyzację procesu tworzenia dokumentacji technicznej.
+    \item \textbf{Znaczenie zarządzania pamięcią:} Ręczne zarządzanie pamięcią w języku C++ wymaga szczególnej dyscypliny. Implementacja jawnego destruktora oraz metody czyszczącej zapobiegła potencjalnym wyciekom pamięci (\textit{memory leaks}), co jest kluczowe przy pracy ze strukturami opartymi na dynamicznych wskaźnikach.
+\end{enumerate}
+
+Podsumowując, cel projektu został w pełni osiągnięty. Powstała aplikacja jest stabilna, poprawna algorytmicznie i dobrze udokumentowana, co stanowi solidną podstawę do dalszego rozbudowywania programu o bardziej zaawansowane mechanizmy lub uniwersalne szablony klas (\textit{templates}).
