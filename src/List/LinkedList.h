@@ -2,6 +2,7 @@
 #define LINKED_LIST_H
 
 #include "Node.h"
+#include "../Iterator/Iterator.h"
 
 /**
  * @file LinkedList.h
@@ -81,6 +82,14 @@ public:
      * @brief Usuwa wszystkie elementy z listy i resetuje jej stan.
      */
     void clear();
+
+    ListIterator begin() const {
+        return ListIterator(head);
+    }
+
+    ListIterator end() const {
+        return ListIterator(nullptr);
+    }
 };
 
 #endif

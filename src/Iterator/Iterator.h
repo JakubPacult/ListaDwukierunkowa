@@ -1,7 +1,7 @@
 #ifndef ITERATOR_H
 #define ITERATOR_H
 
-#include "./List/Node.h"
+#include "../List/Node.h"
 
 class ListIterator {
 private:
@@ -46,6 +46,7 @@ public:
     Node* getNode() const {
         return current;
     }
+
 };
 
 #endif
